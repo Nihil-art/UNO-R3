@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Loading Screen Logic
+    const loadingScreen = document.getElementById('loading-screen');
+    const desktopVideo = document.getElementById('loading-video-desktop');
+    const mobileVideo = document.getElementById('loading-video-mobile');
+    
+    let isLoaded = false;
+    function hideLoadingScreen() {
+        if (isLoaded) return;
+        isLoaded = true;
+        if (loadingScreen) {
+            loadingScreen.classList.add('hidden');
+        }
+        document.body.classList.remove('loading');
+    }
+
+    if (desktopVideo) desktopVideo.addEventListener('ended', hideLoadingScreen);
+    if (mobileVideo) mobileVideo.addEventListener('ended', hideLoadingScreen);
+
+    // Fallback: hide after 8 seconds just in case
+    setTimeout(hideLoadingScreen, 8000);
+
     // Header scroll effect
     const header = document.querySelector('.trust-header');
     window.addEventListener('scroll', () => {

@@ -12,7 +12,17 @@
     <script src="script.js" defer></script>
 </head>
 
-<body class="dark-theme">
+<body class="dark-theme loading">
+    <!-- Loading Screen --> 
+    <div class="loading-screen" id="loading-screen">
+        <video autoplay muted playsinline class="bg-video desktop-video" id="loading-video-desktop">
+            <source src="videos/large-screen/Logo_loading_screen_large.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted playsinline class="bg-video mobile-video" id="loading-video-mobile">
+            <source src="videos/small-screen/Logo-loading-screen-small.mp4" type="video/mp4">
+        </video>
+    </div>
+
     <!-- Header -->
     <header class="trust-header glassmorphism">
         <div class="container header-container">
@@ -89,3 +99,5 @@
             </div>
         </div>
     </section>
+</body>
+</html>
