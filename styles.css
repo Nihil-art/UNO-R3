@@ -736,13 +736,17 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media (max-width: 768px) {
+/* Serve mobile video on portrait tablets and phones */
+@media (max-width: 1024px) and (orientation: portrait), (max-width: 768px) {
     .desktop-video {
         display: none;
     }
     .mobile-video {
         display: block;
     }
+}
+
+@media (max-width: 768px) {
     .section-title {
         font-size: 2rem;
         margin-bottom: 40px;
